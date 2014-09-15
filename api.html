@@ -1,9 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+  <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Linux https://github.com/w3c/tidy-html5/tree/c63cc39">
   <meta charset="utf-8">
-  <title>IP Quail.com - jQuery.getJSON demo</title>
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IP Quail is a simple website which tells you your IPv4 or IPv6 address. It is also shell scriptable with curl.">
+  <meta name="author" content="Theodore Baschak">
+
+  <title>IP Quail!</title>
+  <!-- Bootstrap core CSS -->
+  <link href="http://hcdn.pw/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="assets/css/blog.css" rel="stylesheet">
+
+
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" language="javascript">
   $(document).ready(function() {
     $.getJSON('https://dev.henchman21.net/ip/api/v1.0/remote_addr', function(aa) {
@@ -17,12 +30,75 @@
     });
   });
   </script>
+
+  
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+  <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <link rel="icon" href="favicon.png">
 </head>
+
 <body>
- 
-  <div id="ip"></div>
+  <div class="container">
+    <div class="blog-header">
+      <h1 class="blog-title">IP Quail!</h1>
+      <p class="lead blog-description">This website will tell you your IP[v4|v6] addresses.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+        <div class="blog-post">
+          <h2 class="blog-post-title">Your IP address is:</h2>
+          <p class="text-muted"><!--#echo var="REMOTE_ADDR" --></p>
+ <div id="ip"></div>
   <div id="ipv4"></div>
   <div id="ipv6"></div>
- 
+
+          <ul class="nav nav-pills">
+            <li>
+              <a href="http://4.ipquail.com">IPv4 Only</a>
+            </li>
+            <li>
+              <a href="http://ipquail.com">IPv4/IPv6 Auto</a>
+            </li>
+            <li>
+              <a href="http://6.ipquail.com">IPv6 Only</a>
+            </li>
+          </ul>
+          <hr>
+
+          <p>This website can also be scripted using curl:<br>
+          <code>curl 6.ipquail.com</code> or <code>curl 4.ipquail.com</code></p>
+          <hr>
+
+          <div class="blog-footer">
+            <ul class="nav nav-pills">
+              <li>
+                <a href="https://github.com/tbaschak/">© Theo Baschak 2014</a>
+              </li>
+
+              <li>
+                <a href="http://henchcdn.com">CDN Delivery by HenchCDN</a>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /.blog-post -->
+      </div><!-- /.blog-main -->
+
+      <div class="col-sm-3 col-sm-offset-1">
+          <img src="assets/img/bird.png" class="img-responsive" alt="Responsive Quail Image">
+      </div><!-- /.blog-sidebar -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://hcdn.pw/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
