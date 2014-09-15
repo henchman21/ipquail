@@ -18,10 +18,10 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" language="javascript">
   $(document).ready(function() {
-    $.getJSON('https://6.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ab) {
+    $.getJSON('http://6.ipquail.com/ip/api/v1.0/remote_addr', function(ab) {
       $('#ipv6').html(ab.ip);
     });
-    $.getJSON('https://4.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ac) {
+    $.getJSON('https://4.ipquail.com/ip/api/v1.0/remote_addr', function(ac) {
       $('#ipv4').html(ac.ip);
     });
   });
