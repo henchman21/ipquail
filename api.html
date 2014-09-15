@@ -19,9 +19,6 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" language="javascript">
   $(document).ready(function() {
-    $.getJSON('https://dev.henchman21.net/ip/api/v1.0/remote_addr', function(aa) {
-      $('#ip').html('<p> RFC6555: ' + aa.ip + '</p>');
-    });
     $.getJSON('https://6.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ab) {
       $('#ipv6').html(ab.ip);
     });
@@ -54,22 +51,10 @@
       <div class="col-sm-8 blog-main">
         <div class="blog-post">
           <h2 class="blog-post-title">Your IPv4 address is:</h2>
-          <p id="ipv4" class="text-muted"></p>
+          <p id="ipv4" class="text-muted">None</p>
           <h2 class="blog-post-title">Your IPv6 address is:</h2>
-          <p id="ipv6" class="text-muted"></p>
- <div id="ip"></div>
-
-          <ul class="nav nav-pills">
-            <li>
-              <a href="http://4.ipquail.com">IPv4 Only</a>
-            </li>
-            <li>
-              <a href="http://ipquail.com">IPv4/IPv6 Auto</a>
-            </li>
-            <li>
-              <a href="http://6.ipquail.com">IPv6 Only</a>
-            </li>
-          </ul>
+          <p id="ipv6" class="text-muted">None</p>
+ 
           <hr>
 
           <p>This website can also be scripted using curl:<br>
