@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IP Quail.com - jQuery.getJSON demo</title>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" language="javascript">
+  $(document).ready(function() {
+    $.getJSON('https://dev.henchman21.net/ip/api/v1.0/remote_addr', function(aa) {
+      $('#ip').html('<p> RFC6555: ' + aa.ip + '</p>');
+    });
+    $.getJSON('https://6.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ab) {
+      $('#ipv6').html('<p> IPv6: ' + ab.ip + '</p>');
+    });
+    $.getJSON('https://4.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ac) {
+      $('#ipv4').html('<p> IPv4: ' + ac.ip + '</p>');
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+  <div id="ip"></div>
+  <div id="ipv4"></div>
+  <div id="ipv6"></div>
+ 
+</body>
+</html>
