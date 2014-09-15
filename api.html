@@ -23,10 +23,10 @@
       $('#ip').html('<p> RFC6555: ' + aa.ip + '</p>');
     });
     $.getJSON('https://6.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ab) {
-      $('#ipv6').html('<p> IPv6: ' + ab.ip + '</p>');
+      $('#ipv6').html(ab.ip);
     });
     $.getJSON('https://4.dev.henchman21.net/ip/api/v1.0/remote_addr', function(ac) {
-      $('#ipv4').html('<p> IPv4: ' + ac.ip + '</p>');
+      $('#ipv4').html(ac.ip);
     });
   });
   </script>
@@ -53,11 +53,11 @@
     <div class="row">
       <div class="col-sm-8 blog-main">
         <div class="blog-post">
-          <h2 class="blog-post-title">Your IP address is:</h2>
-          <p class="text-muted"><!--#echo var="REMOTE_ADDR" --></p>
+          <h2 class="blog-post-title">Your IPv4 address is:</h2>
+          <p id="ipv4" class="text-muted"></p>
+          <h2 class="blog-post-title">Your IPv6 address is:</h2>
+          <p id="ipv6" class="text-muted"></p>
  <div id="ip"></div>
-  <div id="ipv4"></div>
-  <div id="ipv6"></div>
 
           <ul class="nav nav-pills">
             <li>
