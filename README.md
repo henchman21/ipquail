@@ -18,13 +18,14 @@ map $http_user_agent $myindex {
   ~curl /ip.html;
 }
 
-# Redirect everything to the secure site.
 server {
-	listen 206.220.196.21:80 accept_filter=httpready;
-	listen [2604:4280:6865:6e63:686d:616e:3231:22]:80 ipv6only=on accept_filter=httpready;
+	listen 199.202.21.19:80; 
+	listen [2604:4280:d000:11::19]:80;
 
-	server_name ipquail.com www.ipquail.com 4.ipquail.com 6.ipquail.com;
-	root /usr/local/www/ipquail;
+	server_name ipquail.com 4.ipquail.com 6.ipquail.com;
+	root /var/www/ipquail;
+
+	charset utf-8;
 
 	access_log /var/log/nginx/ipquail_com_access.log;
 	error_log /var/log/nginx/ipquail_com_error.log;
@@ -32,6 +33,14 @@ server {
 	ssi on;
 
 	location = / { rewrite ^ $myindex; }
+
+	location /ip/api/v1.0/ {
+		try_files $uri $uri/ $uri.html =404;
+		add_header 'Access-Control-Allow-Origin' '*';
+		add_header 'Access-Control-Allow-Methods' 'GET';
+		add_header 'Access-Control-Allow-Headers' 'X-Requested-With,Accept,Content-Type,Origin';
+	}
+
 }
 
 ```
