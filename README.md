@@ -22,7 +22,7 @@ server {
 	listen 199.202.21.19:80; 
 	listen [2604:4280:d000:11::19]:80;
 
-	server_name ipquail.com 4.ipquail.com 6.ipquail.com;
+	server_name ipquail.com 4.ipquail.com 6.ipquail.com www.ipquail.com;
 	root /var/www/ipquail;
 
 	charset utf-8;
