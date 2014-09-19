@@ -28,14 +28,21 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>IP Quail!</h1>
-        <p>This website will tell you your IP[v4|v6] addresses.</p>
-        <h3>Your IPv6 address is:</h3>
-        <p id="ipv6">None</p>
-        <h3>Your IPv4 address is:</h3>
-        <p id="ipv4">None</p>
-        <hr>
-        <p>This website can also be scripted using curl: <code>curl 6.ipquail.com</code> or <code>curl 4.ipquail.com</code></p>
+        <div class="row">
+            <div class="col-xs-8 col-sm-8">
+                <h1>IP Quail!</h1>
+                <p>This website will tell you your IP[v4|v6] addresses.</p>
+                <h3>Your IPv6 address is:</h3>
+                <p id="ipv6">None</p>
+                <h3>Your IPv4 address is:</h3>
+                <p id="ipv4">None</p>
+                <hr>
+                <p>This website can also be shell scripted using curl:<br><code>IP6=`curl 6.ipquail.com`</code> or <code>IP4=`curl 4.ipquail.com`</code></p>
+            </div>
+            <div class="col-xs-4 col-sm-4">
+                <img class="img-responsive" src="assets/img/bird.png" alt="A Funny Bird"/>
+            </div>
+        </div>
       </div>
     </div>
 
