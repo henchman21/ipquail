@@ -14,8 +14,8 @@ Uses:
 
 ```
 map $http_user_agent $myindex {
-  default /index.html;
-  ~curl /ip.html;
+	default /index.html;
+	~curl /ip.html;
 }
 
 server {
@@ -35,11 +35,22 @@ server {
 	location = / { rewrite ^ $myindex; }
 
 	location /ip/api/v1.0/ {
+		ssi_types *;
 		try_files $uri $uri/ $uri.html =404;
 		add_header 'Access-Control-Allow-Origin' '*';
 		add_header 'Access-Control-Allow-Methods' 'GET';
 		add_header 'Access-Control-Allow-Headers' 'X-Requested-With,Accept,Content-Type,Origin';
+		types { } 
+			default_type  application/json;
 	}
+
+    pagespeed on;
+    pagespeed FileCachePath /var/ngx_pagespeed_cache;
+    pagespeed RewriteLevel CoreFilters;
+    pagespeed EnableFilters collapse_whitespace,remove_comments;
+    location ~ ".pagespeed.([a-z].)?[a-z]{2}.[^.]{10}.[^.]+" { }
+    location ~ "^/ngx_pagespeed_static/" { }
+    location ~ "^/ngx_pagespeed_beacon$" { }
 
 }
 
